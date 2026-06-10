@@ -28,7 +28,7 @@
             background: #0d1117;
         }
 
-        /* Background setup */
+        /* Fixed Background: High-Quality Minecraft Aesthetic from the web */
         body::before {
             content: '';
             position: fixed;
@@ -36,14 +36,305 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(13, 10, 26, 0.7), rgba(13, 10, 26, 0.85)), 
-                        url('1781087577384.png') no-repeat center center/cover;
-            filter: blur(12px);
-            transform: scale(1.1);
+            /* Using a reliable Unsplash image for a dark, stylized nature/Minecraft vibe */
+            background: linear-gradient(rgba(13, 10, 26, 0.6), rgba(13, 10, 26, 0.8)), 
+                        url('https://images.unsplash.com/photo-1627856013091-fed6e4e30025?q=80&w=2000') no-repeat center center/cover;
+            filter: blur(8px);
+            transform: scale(1.05);
             z-index: -2;
         }
 
-        /* Ambient purple glowing background
+        /* Ambient purple glowing background overlay */
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(178, 81, 255, 0.2) 0%, transparent 60%);
+            z-index: -1;
+            animation: pulseAmbient 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseAmbient {
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(1.15); opacity: 0.8; }
+        }
+
+        /* Premium Glassmorphism UI Container - Fixed Alignment */
+        .glass-panel {
+            background: rgba(20, 20, 30, 0.4);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 28px;
+            padding: 3.5rem 2.5rem;
+            width: 90%;
+            max-width: 500px;
+            
+            /* Flexbox for perfect centering */
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center;
+
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6),
+                        inset 0 1px 1px rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transform: translateY(40px);
+            animation: containerEntry 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes containerEntry {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animated Server Logo Layout - Fallback integrated */
+        .logo-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.8rem;
+        }
+
+        .main-logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 24px;
+            object-fit: cover;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            animation: logoFloat 4s ease-in-out infinite;
+            /* If local logo is missing, show a dark purple placeholder box to prevent UI collapse */
+            background-color: #2a1b38; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(1deg); }
+        }
+
+        /* Radial purple light bloom centered right behind logo */
+        .aura {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 160px;
+            height: 160px;
+            background: #b251ff;
+            filter: blur(50px);
+            opacity: 0.4;
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 0.3rem;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff 40%, #d494ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .tagline {
+            font-family: 'VT323', monospace;
+            font-size: 1.5rem;
+            color: #d494ff;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Functional Click-to-Copy Address Block - Fixed Alignment */
+        .ip-showcase {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ip-showcase:hover {
+            background: rgba(0, 0, 0, 0.7);
+            border-color: rgba(178, 81, 255, 0.6);
+            box-shadow: 0 0 25px rgba(178, 81, 255, 0.25);
+        }
+
+        .ip-text-side {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .ip-meta {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: #bbb;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .ip-string {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        /* Fixed Button Alignment inside the box */
+        .copy-badge {
+            background: rgba(255, 255, 255, 0.1);
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            transition: all 0.25s ease;
+            color: #d494ff;
+        }
+
+        .ip-showcase:hover .copy-badge {
+            background: #b251ff;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        /* Sliding internal copy success banner */
+        .toast-banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #b251ff;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transform: translateY(100%);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .toast-banner.active {
+            transform: translateY(0);
+        }
+
+        /* Modern Discord Hyper-Button */
+        .discord-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 1.15rem;
+            background: linear-gradient(135deg, #5865F2 0%, #404eed 100%);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 20px rgba(88, 101, 242, 0.3);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .discord-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(88, 101, 242, 0.45);
+            filter: brightness(1.15);
+        }
+
+        .discord-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Responsive scaling adaptations */
+        @media (max-width: 480px) {
+            h1 { font-size: 2.4rem; }
+            .glass-panel { padding: 2.5rem 1.5rem; }
+            .main-logo { width: 120px; height: 120px; }
+            .ip-string { font-size: 1.05rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <div class="glass-panel">
+        <div class="logo-container">
+            <div class="aura"></div>
+            <img src="1781087577384.png" alt="Logo Missing - check filename" class="main-logo">
+        </div>
+
+        <h1>CRAFT07</h1>
+        <p class="tagline">Join the Ultimate Realm</p>
+
+        <div class="ip-showcase" onclick="copyAddress('play.craft07.com:25565')">
+            <div class="ip-text-side">
+                <p class="ip-meta">Server IP Address & Port</p>
+                <p class="ip-string" id="target-ip">play.craft07.com:25565</p>
+            </div>
+            <div class="copy-badge">
+                <i class="fa-regular fa-copy"></i>
+            </div>
+            <div class="toast-banner" id="status-toast">
+                <i class="fa-solid fa-circle-check" style="margin-right: 10px;"></i> Address Copied!
+            </div>
+        </div>
+
+        <a href="https://discord.gg/GragT2Yecs" target="_blank" class="discord-btn">
+            <i class="fa-brands fa-discord" style="font-size: 1.35rem;"></i>
+            Connect Discord
+        </a>
+    </div>
+
+    <script>
+        function copyAddress(textVal) {
+            navigator.clipboard.writeText(textVal).then(() => {
+                const notice = document.getElementById('status-toast');
+                notice.classList.add('active');
+                
+                setTimeout(() => {
+                    notice.classList.remove('active');
+                }, 1800);
+            }).catch(error => {
+                console.error('Action aborted:', error);
+            });
+        }
+    </script>
+</body>
+</html>
+
 
 
 
