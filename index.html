@@ -12,7 +12,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
-            /* FIX: Completely removes the glitchy blue square tap highlight on mobile screens */
+            /* Completely fixes the glitchy mobile touchscreen highlight box bug */
             -webkit-tap-highlight-color: transparent;
         }
 
@@ -27,7 +27,7 @@
             background: #09070f;
         }
 
-        /* Fixed Background: High-Quality Minecraft Aesthetic */
+        /* Ambient Scenery Background Layer */
         body::before {
             content: '';
             position: fixed;
@@ -39,7 +39,7 @@
             z-index: -2;
         }
 
-        /* Ambient Purple Glow (Main Theme) */
+        /* Neon Purple Theme Base Glow */
         .ambient-glow {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -47,7 +47,7 @@
             z-index: -1;
         }
 
-        /* Premium Glassmorphic Container */
+        /* Glass UI Container Card */
         .glass-card {
             background: rgba(255, 255, 255, 0.04);
             backdrop-filter: blur(20px) saturate(160%);
@@ -64,7 +64,7 @@
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.2);
         }
 
-        /* Server Logo Frame */
+        /* Main Logo Formatting */
         .logo-frame {
             position: relative;
             margin-bottom: 1.5rem;
@@ -74,7 +74,7 @@
             border: 3px solid #b251ff;
             box-shadow: 0 0 25px rgba(178, 81, 255, 0.6);
             overflow: hidden;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.2);
         }
 
         .server-logo {
@@ -102,7 +102,7 @@
             letter-spacing: 2px;
         }
 
-        /* Section Title Layout featuring custom blocks */
+        /* Header Subsections with Custom Graphics */
         .section-title {
             display: flex;
             align-items: center;
@@ -123,7 +123,7 @@
             border-radius: 4px;
         }
 
-        /* Interactive Copy Box Elements */
+        /* Interactive Display Box Modules */
         .ip-showcase {
             width: 100%;
             background: rgba(0, 0, 0, 0.5);
@@ -192,7 +192,7 @@
             fill: #ffffff;
         }
 
-        /* Neon Green Sliding Copy Success Animation Banner */
+        /* Beautiful Slide-Up Neon Green Copy Notice */
         .toast-banner {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -211,7 +211,7 @@
             transform: translateY(0);
         }
 
-        /* Discord Button */
+        /* Social CTA Button formatting */
         .discord-btn {
             display: flex;
             align-items: center;
@@ -252,14 +252,14 @@
 
     <div class="glass-card">
         <div class="logo-frame">
-            <img src="logo.png" alt="CRAFT07" class="server-logo">
+            <img src="https://kartikboss67.github.io/logo.png" alt="CRAFT07" class="server-logo">
         </div>
 
         <h1>CRAFT07</h1>
         <p class="sub-tag">Join the Ultimate Realm</p>
 
         <div class="section-title">
-            <img class="block-emoji" src="data:image/png;base64,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" alt="Java" class="block-emoji">
+            <img class="block-emoji" src="https://kartikboss67.github.io/1000028237.png" alt="Java Block">
             Java Edition
         </div>
         <div class="ip-showcase" onclick="copyValue('play.craft07.com', 'toast-java')">
@@ -274,7 +274,7 @@
         </div>
 
         <div class="section-title">
-            <img class="block-emoji" src="data:image/png;base64,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" alt="Bedrock" class="block-emoji">
+            <img class="block-emoji" src="https://kartikboss67.github.io/1000028236.png" alt="Bedrock Block">
             Bedrock Edition (PE/Mobile)
         </div>
         <div class="ip-showcase" onclick="copyValue('play.craft07.com', 'toast-bedrock-ip')">
@@ -326,4 +326,5 @@
     </script>
 </body>
 </html>
+
 
