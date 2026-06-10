@@ -22,35 +22,35 @@
             color: #ffffff;
             overflow-x: hidden;
             position: relative;
-            background: #06090e;
+            background: #09070f;
         }
 
-        /* Minecraft Landscape Aesthetic Background */
+        /* Fixed Background: High-Quality Minecraft Aesthetic */
         body::before {
             content: '';
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(10, 20, 15, 0.75), rgba(10, 20, 15, 0.9)), 
+            background: linear-gradient(rgba(15, 11, 31, 0.65), rgba(15, 11, 31, 0.85)), 
                         url('https://images.unsplash.com/photo-1627856013091-fed6e4e30025?q=80&w=2000') no-repeat center center/cover;
             filter: blur(10px);
             transform: scale(1.1);
             z-index: -2;
         }
 
-        /* Ambient Neon Green Glow */
+        /* Ambient Purple Glow (Main Theme) */
         .ambient-glow {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(0, 255, 136, 0.15) 0%, transparent 60%);
+            background: radial-gradient(circle at 50% 50%, rgba(178, 81, 255, 0.25) 0%, transparent 60%);
             z-index: -1;
         }
 
         /* Premium Glassmorphic Container */
         .glass-card {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.04);
             backdrop-filter: blur(20px) saturate(160%);
             -webkit-backdrop-filter: blur(20px) saturate(160%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 28px;
             padding: 3rem 2rem;
             width: 92%;
@@ -59,23 +59,19 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.2);
         }
 
-        /* Fixed Logo Container with Embedded Safe Image Fallbacks */
+        /* Permanent High-Res Asset Logo Frame */
         .logo-frame {
             position: relative;
             margin-bottom: 1.5rem;
             width: 130px;
             height: 130px;
-            background: #14281f;
             border-radius: 24px;
-            border: 3px solid #00ff88;
-            box-shadow: 0 0 25px rgba(0, 255, 136, 0.4);
+            border: 3px solid #b251ff;
+            box-shadow: 0 0 25px rgba(178, 81, 255, 0.6);
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .server-logo {
@@ -89,7 +85,7 @@
             font-weight: 800;
             letter-spacing: 2px;
             margin-bottom: 0.2rem;
-            background: linear-gradient(135deg, #ffffff 40%, #a3ffda 100%);
+            background: linear-gradient(135deg, #ffffff 40%, #d494ff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -97,20 +93,29 @@
         .sub-tag {
             font-family: 'VT323', monospace;
             font-size: 1.4rem;
-            color: #00ff88;
+            color: #d494ff;
             margin-bottom: 2rem;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
+        /* Alignment with Eyecatchy Custom SVG Block Emojis */
         .section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-size: 0.85rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: #888;
+            color: #b3b3b3;
             align-self: flex-start;
-            margin: 0.5rem 0 0.5rem 4px;
+            margin: 0.6rem 0 0.5rem 4px;
+        }
+
+        .block-emoji {
+            width: 16px;
+            height: 16px;
         }
 
         /* Interactive Copy Box Elements */
@@ -132,8 +137,8 @@
 
         .ip-showcase:hover {
             background: rgba(0, 0, 0, 0.65);
-            border-color: rgba(0, 255, 136, 0.4);
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.15);
+            border-color: rgba(178, 81, 255, 0.4);
+            box-shadow: 0 0 20px rgba(178, 81, 255, 0.25);
         }
 
         .ip-text-side {
@@ -168,21 +173,21 @@
         }
 
         .ip-showcase:hover .copy-badge {
-            background: #00ff88;
+            background: #b251ff;
         }
 
         .copy-badge svg {
             width: 18px;
             height: 18px;
-            fill: #00ff88;
+            fill: #d494ff;
             transition: fill 0.25s ease;
         }
 
         .ip-showcase:hover .copy-badge svg {
-            fill: #000000;
+            fill: #ffffff;
         }
 
-        /* Green Sliding Toast Animation */
+        /* Neon Green Sliding Copy Success Animation Banner */
         .toast-banner {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -201,7 +206,7 @@
             transform: translateY(0);
         }
 
-        /* Discord Button */
+        /* Discord Button Theme Match */
         .discord-btn {
             display: flex;
             align-items: center;
@@ -242,16 +247,19 @@
 
     <div class="glass-card">
         <div class="logo-frame">
-            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23111' /><text x='50%25' y='57%25' font-size='26' font-family='sans-serif' font-weight='bold' fill='%2300ff88' text-anchor='middle'>C07</text></svg>" alt="CRAFT07" class="server-logo" id="display-logo">
+            <img src="https://cdn.discordapp.com/icons/1131977798782980137/a_06385cf61d2d3129528d9c28859a4bb3.gif?size=256" alt="CRAFT07" class="server-logo">
         </div>
 
         <h1>CRAFT07</h1>
         <p class="sub-tag">Join the Ultimate Realm</p>
 
-        <div class="section-title">Java Edition</div>
+        <div class="section-title">
+            <svg class="block-emoji" viewBox="0 0 16 16"><path fill="#3fa02a" d="M2 2h12v12H2z"/><path fill="#5ca93c" d="M2 2h12v3H2z"/><path fill="#2a6e1a" d="M2 11h12v3H2z"/></svg>
+            Java Edition
+        </div>
         <div class="ip-showcase" onclick="copyValue('play.craft07.com', 'toast-java')">
             <div class="ip-text-side">
-                <p class="ip-meta">Server IP (No Port Needed)</p>
+                <p class="ip-meta">Server IP</p>
                 <p class="ip-string">play.craft07.com</p>
             </div>
             <div class="copy-badge">
@@ -260,7 +268,10 @@
             <div class="toast-banner" id="toast-java">Java IP Address Copied!</div>
         </div>
 
-        <div class="section-title">Bedrock Edition (PE/Mobile)</div>
+        <div class="section-title">
+            <svg class="block-emoji" viewBox="0 0 16 16"><path fill="#555" d="M2 2h12v12H2z"/><path fill="#777" d="M2 2h4v4H2zm8 8h4v4h-4z"/><path fill="#333" d="M8 4h4v4H8zM4 10h4v4H4z"/></svg>
+            Bedrock Edition (PE/Mobile)
+        </div>
         <div class="ip-showcase" onclick="copyValue('play.craft07.com', 'toast-bedrock-ip')">
             <div class="ip-text-side">
                 <p class="ip-meta">Bedrock IP</p>
@@ -272,15 +283,15 @@
             <div class="toast-banner" id="toast-bedrock-ip">Bedrock IP Copied!</div>
         </div>
 
-        <div class="ip-showcase" onclick="copyValue('25565', 'toast-bedrock-port')">
+        <div class="ip-showcase" onclick="copyValue('25566', 'toast-bedrock-port')">
             <div class="ip-text-side">
                 <p class="ip-meta">Bedrock Port</p>
-                <p class="ip-string">25565</p>
+                <p class="ip-string">25566</p>
             </div>
             <div class="copy-badge">
                 <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
             </div>
-            <div class="toast-banner" id="toast-bedrock-port">Port Copied: 25565</div>
+            <div class="toast-banner" id="toast-bedrock-port">Port Copied: 25566</div>
         </div>
 
         <a href="https://discord.gg/GragT2Yecs" target="_blank" class="discord-btn">
@@ -290,14 +301,12 @@
     </div>
 
     <script>
-        // Smooth slide animation copy controller
         function copyValue(textVal, toastId) {
             navigator.clipboard.writeText(textVal).then(() => {
                 const targetToast = document.getElementById(toastId);
                 targetToast.classList.add('active');
                 setTimeout(() => { targetToast.classList.remove('active'); }, 1500);
             }).catch(() => {
-                // Legacy system fallback
                 const hiddenArea = document.createElement("textarea");
                 document.body.appendChild(hiddenArea);
                 hiddenArea.value = textVal;
@@ -309,23 +318,6 @@
                 setTimeout(() => { targetToast.classList.remove('active'); }, 1500);
             });
         }
-
-        // Automatic image parsing recovery trick to fetch image content from browser cache limits
-        window.addEventListener('DOMContentLoaded', () => {
-            const imageContainer = document.getElementById('display-logo');
-            const fallbackLoader = new Image();
-            fallbackLoader.src = "https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?q=80&w=200";
-            
-            // Re-routing request headers smoothly via browser img engine
-            const imgUrl = "https://kommodo.ai/i/8y6yiKFGp9AlI3Fp36dl";
-            fetch(imgUrl, { mode: 'no-cors' }).then(() => {
-                imageContainer.src = imgUrl;
-            }).catch(() => {
-                imageContainer.src = fallbackLoader.src;
-            });
-        });
     </script>
 </body>
 </html>
-
-                      
