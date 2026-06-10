@@ -12,7 +12,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
-            /* Completely fixes the glitchy mobile touchscreen highlight box bug */
+            /* Blocks the glitchy touch highlight box completely */
             -webkit-tap-highlight-color: transparent;
         }
 
@@ -75,6 +75,9 @@
             box-shadow: 0 0 25px rgba(178, 81, 255, 0.6);
             overflow: hidden;
             background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .server-logo {
@@ -119,8 +122,6 @@
         .block-emoji {
             width: 22px;
             height: 22px;
-            object-fit: contain;
-            border-radius: 4px;
         }
 
         /* Interactive Display Box Modules */
@@ -252,14 +253,28 @@
 
     <div class="glass-card">
         <div class="logo-frame">
-            <img src="https://kartikboss67.github.io/logo.png" alt="CRAFT07" class="server-logo">
+            <svg class="server-logo" viewBox="0 0 100 100">
+                <defs>
+                    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#b251ff" />
+                        <stop offset="100%" stop-color="#4b1380" />
+                    </linearGradient>
+                </defs>
+                <rect width="100" height="100" fill="url(#purpleGrad)"/>
+                <text x="50%" y="58%" font-size="22" font-family="'Poppins', sans-serif" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1">C07</text>
+            </svg>
         </div>
 
         <h1>CRAFT07</h1>
         <p class="sub-tag">Join the Ultimate Realm</p>
 
         <div class="section-title">
-            <img class="block-emoji" src="https://kartikboss67.github.io/1000028237.png" alt="Java Block">
+            <svg class="block-emoji" viewBox="0 0 32 32">
+                <path d="M16 2 L30 9 L30 23 L16 30 L2 23 L2 9 Z" fill="#5ca93c"/>
+                <path d="M16 2 L30 9 L16 16 L2 9 Z" fill="#74c249"/>
+                <path d="M2 9 L16 16 L16 30 L2 23 Z" fill="#4d8e2b"/>
+                <path d="M16 16 L30 9 L30 23 L16 30 Z" fill="#3f7523"/>
+            </svg>
             Java Edition
         </div>
         <div class="ip-showcase" onclick="copyValue('play.craft07.com', 'toast-java')">
@@ -274,7 +289,15 @@
         </div>
 
         <div class="section-title">
-            <img class="block-emoji" src="https://kartikboss67.github.io/1000028236.png" alt="Bedrock Block">
+            <svg class="block-emoji" viewBox="0 0 32 32">
+                <path d="M16 2 L30 9 L30 23 L16 30 L2 23 L2 9 Z" fill="#555555"/>
+                <path d="M16 2 L30 9 L16 16 L2 9 Z" fill="#777777"/>
+                <path d="M2 9 L16 16 L16 30 L2 23 Z" fill="#444444"/>
+                <path d="M16 16 L30 9 L30 23 L16 30 Z" fill="#333333"/>
+                <circle cx="16" cy="9" r="2" fill="#222222"/>
+                <circle cx="9" cy="18" r="2" fill="#222222"/>
+                <circle cx="23" cy="18" r="2" fill="#222222"/>
+            </svg>
             Bedrock Edition (PE/Mobile)
         </div>
         <div class="ip-showcase" onclick="copyValue('play.craft07.com', 'toast-bedrock-ip')">
@@ -326,5 +349,3 @@
     </script>
 </body>
 </html>
-
-
